@@ -1,21 +1,45 @@
-﻿using System;
-
-namespace sustainable
+﻿namespace sustainable
 {
     class FizzBuzzPlayer
     {
-        public string Play(int v)
+        public string Play(int input)
         {
-            if (v % 15 == 0)
+            string result = "";
+
+            /*
+             * if it's neither fizz nor buzz, return the number 
+             * as a string
+             */
+            if (input % 3 != 0 && input % 5 != 0)
+            {
+                result = input.ToString();
+
+            }
+
+            else if (input % 3 != 0 || input % 5 != 0)
+            {
+
+                /*
+                 * if we've made it this far and it's not a multiple of 3
+                 * it's buzz:
+                 */
+                if (input % 3 != 0) result = "buzz";
+
+                /*
+                 * if we've made it this far and it's not a multiple of 3
+                 * it's buzz:
+                 */
+                else if (input % 5 != 0) { result = "fizz"; }
+
+
+            }
+            else
+            {
+                // WHAT'S MY NAME
                 return "fizzbuzz";
+            }
 
-            if (v % 3 == 0)
-                return "fizz";
-
-            if (v % 5 == 0)
-                return "buzz";
-
-            return v.ToString();
+            return result;
         }
     }
 }
